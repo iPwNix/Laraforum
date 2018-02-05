@@ -29,9 +29,8 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
-    },
-    "extra": {
+        },
+        "files": ["tests/utilities/functions.php"],
         "laravel": {
             "dont-discover": [
             ]
