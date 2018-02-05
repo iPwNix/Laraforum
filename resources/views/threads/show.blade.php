@@ -25,6 +25,18 @@
                  @endforeach
             </div>
         </div>
-
+        @if(auth()->check())
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <form method="POST" action="{{ $thread->path() .'/replies' }}">
+                        {{ csrf_field() }}
+                        <textarea name="body" id="body" class="form-control" placeholder="Have something to say?" rows="5" style="resize: none;"></textarea>
+                        <button type="submit" class="btn btn-default" style="width: 100%;">Post</button>
+                    </form>
+                </div>
+            </div>
+            @else
+            <p class="text-center"><a href="{{route('login')}}">Sign In</a> to add your reply to this thread!</p>
+        @endif
     </div>
 @endsection
