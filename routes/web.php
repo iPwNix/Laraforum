@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/threads', 'ThreadsController@index')->name('threadIndex');
 Route::get('/threads/{thread}', 'ThreadsController@show');
+Route::post('/threads', 'ThreadsController@store');
 Route::post('/threads/{thread}/replies', 'RepliesController@store');
